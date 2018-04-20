@@ -9,8 +9,19 @@ class Person {
     }
 }
 
-const me = new Person('Bruno', 27);
-console.log(me.getGretting())
+class Student extends Person {
+    constructor(name, age, major) {
+        super(name, age);
+        this.major = major;
+    }
 
-const other = new Person();
-console.log(other.getGretting());
+    hasMajor() {
+        return !!this.major;
+    }
+}
+
+const me = new Student('Bruno', 27, 'Computer Science');
+console.log(me)
+
+const other = new Student();
+console.log(other);
